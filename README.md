@@ -23,27 +23,13 @@ node / nodemon index.js
 ```
 
 
-
-## 图片展示
-
-![首页](\images\首页.png)
-
-![首页2](C:\Users\60228\Desktop\front end\shop\images\首页2.png)
-
-![首页3](C:\Users\60228\Desktop\front end\shop\images\首页3.png)
-
-![分类](C:\Users\60228\Desktop\front end\shop\images\分类.png)
-
-![购物车](C:\Users\60228\Desktop\front end\shop\images\购物车.png)
-
-![会员中心](C:\Users\60228\Desktop\front end\shop\images\会员中心.png)
-
-![商品详情页](C:\Users\60228\Desktop\front end\shop\images\商品详情页.png)
-
-![登录](C:\Users\60228\Desktop\front end\shop\images\登录.png)
-
-![注册](C:\Users\60228\Desktop\front end\shop\images\注册.png)
-
-![搜索页1](C:\Users\60228\Desktop\front end\shop\images\搜索页1.png)
-
-![搜索页2](C:\Users\60228\Desktop\front end\shop\images\搜索页2.png)
+## 加载数据库流程
+1. 先打开mongod
+2. 进入sevice文件夹  node index.js
+3. 导入数据
+  http://localhost:3000/goods/insertAllCategory 导入大分类
+  http://localhost:3000/goods/insertAllCategorySub 导入子分类
+  http://localhost:3000/goods/insertAllGoodsInfo  导入商品
+  再进数据库建立一个名为``mains``的collection
+  我使用的Nosqlbooster将data_json下的main.json导入的
+4. 根目录 ``npm run dev``，浏览器打开8080端口就可以了
