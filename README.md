@@ -26,7 +26,7 @@ node / nodemon index.js
 
 ## 图片展示
 
-![首页](..\images\首页.png)
+![首页](\images\首页.png)
 
 ![首页2](C:\Users\60228\Desktop\front end\shop\images\首页2.png)
 
