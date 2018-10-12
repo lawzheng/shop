@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const db = "mongodb://localhost/smile-db"
+const db = "mongodb://localhost/shop-db"
 //用来类似正则匹配
 const glob = require('glob')
 //解析路径
