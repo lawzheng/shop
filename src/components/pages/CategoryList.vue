@@ -86,9 +86,14 @@
             this.changeTabBarActive()
         },
         mounted(){
+            let fontSize = parseFloat(document.getElementsByTagName('html')[0].style.fontSize);
             let winHeight = document.documentElement.clientHeight
-            document.getElementById('leftNav').style.height=winHeight-46-50 +'px'
-            document.getElementById('list-div').style.height=winHeight-90-45 +'px'
+            document.getElementById('leftNav').style.height=winHeight/fontSize-2.2-3.2 +'rem'
+            document.getElementById('list-div').style.height=winHeight/fontSize-2.2-3.2-1.8 +'rem'
+            let icon = document.querySelectorAll('.van-icon')
+            for(let item of icon){
+                item.style.fontSize = 1+'rem'
+            }
         },
         filters:{
             moneyFilter(money){
@@ -212,6 +217,22 @@
     }
 </script>
 <style>
+    .van-nav-bar{
+        height: 2.3rem;
+        line-height: 2.3rem;
+    }
+    .van-nav-bar__title{
+        font-size: 0.9rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .van-nav-bar__left, .van-nav-bar__right{
+        bottom: 50%;
+        transform: translateY(50%);
+        font-size: 0.7rem;
+    }
     .navbar-div{
         border-bottom: 1px solid #ccc;
     }
@@ -242,12 +263,15 @@
     #list-div{
         overflow: scroll;
     }
+    .tabCategorySub{
+        height: 1.8rem;
+    }
     .van-tabs--line .van-tabs__wrap {
-        height: 34px;
+        height: 1.8rem;
     }
     .van-tab {
-        font-size: 12px;
-        line-height: 34px;
+        font-size: 0.6rem;
+        line-height: 1.8rem;
     }
     .list-item{
         display: flex;
@@ -268,8 +292,5 @@
     }
     .van-nav-bar__text {
         color: #f10215;
-    }
-    .van-tab--disabled {
-        color: #000;
     }
 </style>

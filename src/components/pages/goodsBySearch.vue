@@ -204,9 +204,10 @@
         }
     }
 </script>
-<style scoped>
+<style>
     .search{
         height: 2.6rem;
+        width: 100%;
         line-height:2.6rem;
         z-index: 1000;
         background: #fff;
@@ -221,22 +222,21 @@
         border:0;
         background-color: #f5f5f5;
         color:#000;
-        font-size:12px;
+        font-size:0.6rem;
         padding-left: 0.7rem;
         padding-right: -0.7rem;
-        border-radius: 10px; 
+        border-radius: 0.5rem; 
     }
     .btn{
-        margin-left: 20px;
+        margin-left: 1rem;
         height: 1.7rem;
         background: #e93b3d;
         color: #fff;
-        border-radius: 5px;
+        border-radius: 0.25rem;
         width:70%;
     }
     .location-icon{
-        position: relative;
-        top: 0.4rem;
+        vertical-align: middle;
     }
     #cart-list{
         padding-top: 2.6rem;
@@ -255,7 +255,7 @@
     }
     .text{
         flex:14;
-        padding-left:10px;
+        padding-left:0.5rem;
     }
     .goods-price{
         padding-top: 0.5rem;
@@ -269,5 +269,8 @@
     }
     .buy div{
         margin: 6px 0;
+    }
+    .van-button--mini{
+        font-size: 0.7rem;
     }
 </style>

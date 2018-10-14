@@ -56,7 +56,7 @@
     background: #fff;
     border-bottom: 1px solid #ddd;
     border-top: 1px solid #ddd;
-    padding: 5px 0 5px 20px;
+    padding: 0.25rem 0 0.25rem 1rem;
     text-align: left;
     position: relative;
   }
@@ -66,7 +66,7 @@
     height: 0.8rem;
     background: #f10215;
     position: absolute;
-    left: 10px;
+    left: 0.5rem;
     top: 50%;
     transform: translateY(-50%);
 }

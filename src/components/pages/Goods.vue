@@ -25,7 +25,7 @@
         </van-tabs>
     </div>
     <!-- 底部 -->
-    <van-goods-action>
+    <van-goods-action id="bottom">
       <van-goods-action-mini-btn icon="chat" text="客服" @click="onClickMiniBtn" />
       <van-goods-action-mini-btn icon="cart" text="购物车" @click="toCart" />
       <van-goods-action-big-btn text="加入购物车" @click="addGoodsToCart" />
@@ -52,7 +52,6 @@
             return {
                 goodsId: '',
                 goodsInfo:{},   //商品详细数据
-                openLoading: false, //是否开启用户的Loading
             }
         },
         filters:{
@@ -64,7 +63,22 @@
             this.goodsId= this.$route.query.goodsId
             this.getInfo()
         },
+        mounted(){
+            window.addEventListener('scroll', this.onScroll)
+        },
+        beforeDestroy(){
+            removeEventListener('scroll', this.onScroll)
+        },
         methods: {
+            onScroll(){
+                let winHeight = document.documentElement.clientHeight
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+                if(scrollTop>winHeight/2){
+                    document.getElementById('bottom').style.zIndex='4589981'
+                }else{
+                    document.getElementById('bottom').style.zIndex='-1564456'
+                }
+            },
             onClickLeft(){
                 this.$router.go(-1)
             },
@@ -89,7 +103,7 @@
                     }else{
                         Toast('服务器错误，数据取得失败')
                     }
-                    console.log(this.goodsInfo)
+                    // console.log(this.goodsInfo)
                 })
                 .catch(error=>{
                     console.log(error)
@@ -112,13 +126,12 @@
                         Toast.success('加入成功')
                     }else{
                         console.log(response.data.message)
-                        Toast.fail('加入失败')
-                        this.openLoading=false
+                        Toast.fail('请登录')
+                        this.$router.push({name:'Login'})
                     }
                 })
                 .catch((error) => {   
                     Toast.fail('加入失败') 
-                    this.openLoading=false 
                 })
             },
             toCart(){
@@ -153,9 +166,49 @@
         },
     }
 </script>
-<style scoped>
-   .detail{
-     font-size:0px;
+<style>
+    .van-nav-bar{
+        height: 2.3rem;
+        line-height: 2.3rem;
+    }
+    .van-nav-bar__title{
+        font-size: 0.8rem;
+    }
+    .van-nav-bar__left, .van-nav-bar__right{
+        bottom: 50%;
+        transform: translateY(50%);
+        font-size: 0.7rem;
+    }
+    .van-nav-bar .van-icon {
+        color: #f10215;
+    }
+    .van-nav-bar__text {
+        color: #f10215;
+    }
+    .van-tabs--line .van-tabs__wrap{
+        height: 2rem;
+    }
+    .van-tabs--line{
+        padding-top: 2rem;
+    }
+    .van-tab{
+        font-size: 0.7rem;
+        line-height: 2rem;
+    }
+    .van-goods-action-mini-btn{
+        height: 2.5rem;
+        font-size: 0.8rem;
+    }
+    .van-goods-action-mini-btn__icon{
+        font-size: 1rem;
+    }
+    .van-button--bottom-action{
+        height: 2.5rem;
+        line-height: 2.5rem;
+        font-size: 0.8rem;
+    }
+    .detail{
+        font-size:0px;
     }
     .goods-name{
         background-color: #fff;
@@ -179,5 +232,8 @@
     .goods-bottom > div{
         flex:1;
         padding:5px;
+    }
+    #bottom{
+        z-index: -1;
     }
 </style>

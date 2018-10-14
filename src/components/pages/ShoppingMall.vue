@@ -10,7 +10,7 @@
       <input type="text" class="search-input" @click="toSearch" placeholder="搜索想要的" />
     </van-col>
     <van-col span="5" id="btn">
-      <van-button size="mini" @click="toLogin">登录</van-button>
+      <div @click="toLogin">登录</div>
     </van-col>
   </van-row>
 </div>
@@ -191,23 +191,17 @@ export default {
     border:0;
     background-color: #fff;
     color:#000;
-    font-size:12px;
+    font-size:0.6rem;
     padding-left: 0.7rem;
-    border-radius: 10px; 
+    border-radius: 0.5rem;
+    /*margin-top: -0.5rem;*/
   }
   #btn{
     padding-left: 0.5rem;
+    font-size: 0.8rem;
   }
   .location-icon{
-    position: relative;
-    top: 0.4rem;
-  }
-  .van-button--mini{
-    width: 40px;
-    border-radius: 5px;
-    background: transparent;
-    border: 0;
-    font-size: 14px;
+    vertical-align: text-top;
   }
   .swiper-area{
       width:20rem;
@@ -228,6 +222,12 @@ export default {
       text-align: center;
       flex: 1;
   }
+  .type-bar div img{
+    display: block;
+  }
+  .type-bar div span{
+    font-size: 0.6rem;
+  }
   /*推荐商品区*/
   .recommend-area{
       background-color: #fff;
@@ -236,45 +236,13 @@ export default {
       box-shadow: 0 0 2px #ccc;
   }
   .recommend-title{
-      font-size:14px;
+      font-size:0.7rem;
       padding:.2rem;
       color:#f10215;
   }
   .recommend-item{
-      font-size: 12px;
+      font-size: 0.6rem;
       text-align: center;
-  }
- .floor-anomaly{
-      display: flex;
-      flex-direction:row;
-      background-color: #fff;
-      border-bottom:1px solid #ddd;
-  }
-  .floor-anomaly div{
-     width:10rem;
-     box-sizing: border-box;
-     -webkit-box-sizing: border-box;
-  }
-  .floor-one{
-      border-right:1px solid #ddd;
-  }
-  .floor-two{
-      border-bottom:1px solid #ddd;
-  }
-  .floor-rule{
-      display: flex;
-      flex-direction: row;
-      flex-wrap:wrap;
-      background-color: #fff;
-  }
-  .floor-rule div{
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      width:10rem;
-      border-bottom:1px solid #ddd;
-  }
-  .floor-rule div:nth-child(odd){
-      border-right: 1px solid #ddd;
   }
   .hot-area{
       text-align: center;
@@ -284,12 +252,15 @@ export default {
       width: 100%;
   }
   .hot-title{
-    color: #f10215;
-    font-size: 16px;
+      color: #f10215;
+      font-size: 1rem;
   }
   .hot-goods{
       height: 130rem;
       overflow: hidden;
       background: #f5f5f5;
+  }
+  .van-col{
+      padding: 0;
   }
 </style>

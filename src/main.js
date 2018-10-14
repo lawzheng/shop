@@ -6,6 +6,11 @@ import { Button, Row, Col ,Search , Swipe , SwipeItem , Lazyload, List,Field,Nav
 
 Vue.use(Button).use(Row).use(Col).use(Search).use(Swipe).use(SwipeItem).use(Lazyload).use(List).use(Field).use(NavBar).use(Tab).use(Tabs).use(PullRefresh).use(Stepper).use(Tabbar).use(TabbarItem).use(Icon).use(Toast).use(Cell).use(CellGroup).use(Card).use(Sku).use(GoodsAction).use(GoodsActionBigBtn).use(GoodsActionMiniBtn).use(SwipeCell)
 
+//切换页面时自动到顶部
+router.afterEach(() => {
+  window.scrollTo(0,0);
+});
+
 new Vue({
   el: '#app',
   router,

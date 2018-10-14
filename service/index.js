@@ -13,18 +13,6 @@ app.use(cors())
 ;(async () =>{
     await connect()
     initSchemas()
-//     const aaaa = mongoose.model('aaaa')
-//     let oneMain = new aaaa({"advertesPicture": {
-//       "PICTURE_ADDRESS": "http://images.baixingliangfan.cn/advertesPicture/20180404/20180404085441_850.gif"
-//     }})
-//     oneMain.save().then(()=>{
-//         console.log('插入成功')
-//     })
-
-// let  users = await Main.find({}).exec()
-// console.log('------------------')
-// console.log(users)
-// console.log('------------------')  
 })()
 
 const Router = require('koa-router')

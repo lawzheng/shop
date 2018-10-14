@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- 顶部栏 -->
-        <div class="search">
+        <div class="search1">
           <van-row>
             <van-col span="4">
               <img :src="returnIcon" width="30%" @click="onClickLeft" class="location-icon" />
@@ -87,7 +87,7 @@
     }
 </script>
 <style>
-    .search{
+    .search1{
         height: 2.6rem;
         line-height:2.6rem;
         z-index: 1000;
@@ -100,25 +100,24 @@
         border:0;
         background-color: #f5f5f5;
         color:#000;
-        font-size:12px;
+        font-size:0.6rem;
         padding-left: 0.7rem;
         padding-right: -0.7rem;
-        border-radius: 10px; 
+        border-radius: 0.5rem; 
     }
     .btn{
-        margin-left: 20px;
+        margin-left: 1rem;
         height: 1.7rem;
         background: #e93b3d;
         color: #fff;
-        border-radius: 5px;
+        border-radius: 0.25rem;
         width:70%;
     }
     .location-icon{
-        position: relative;
-        top: 0.4rem;
+        vertical-align: middle;
     }
     .history{
-        margin: 1rem;
+        padding: 1rem;
         height: 10rem;
     }
     .history .top{
@@ -135,20 +134,22 @@
         float: right;
     }
     .history #list{
-        font-size: 10px;
+        font-size: 1rem;
         text-align: left;
     }
     .one{
-        padding: 10px;
+        padding: 1rem;
     }
     #list span{
         background: #f5f5f5;
         width: 120%;
-        padding: 8px;
-        border-radius: 10px;
+        padding: 0.4rem;
+        border-radius: 1rem;
         overflow: hidden;
         text-overflow:ellipsis;
         white-space: nowrap;
     }
-    
+    .van-button--mini{
+        font-size: 0.7rem;
+    }
 </style>

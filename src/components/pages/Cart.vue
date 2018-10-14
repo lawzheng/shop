@@ -12,10 +12,10 @@
             <!--显示购物车中的商品-->
             <div class="cart-list">
                 <div class="row" v-for="(item,index) in cartInfo" :key="index">
-                    <van-swipe-cell :right-width="65">
-                        <div class="img"><img :src="item.IMAGE1" width="100%" /></div>
+                    <van-swipe-cell :right-width="swipeWidth">
+                        <div class="img" @click="goGoods(item.ID)"><img :src="item.IMAGE1" width="100%" /></div>
                         <div class="text">
-                            <div class="goods-name">{{item.NAME}}</div>
+                            <div class="goods-name"  @click="goGoods(item.ID)">{{item.NAME}}</div>
                             <div class="control">
                                 <van-stepper v-model="count[index]" />
                             </div>
@@ -37,9 +37,9 @@
             </div>
         </van-pull-refresh>
         <!--清空购物车-->
-        <div class="card-title">
+        <!-- <div class="card-title">
             <van-button size="small" type="danger" @click="deleteCart" plain>清空购物车</van-button>
-        </div>
+        </div> -->
         <van-submit-bar
           :price="totalMoney*100"
           :disabled="!checkedGoods.length"
@@ -70,8 +70,13 @@
                 goodsId:'',
                 count:[],
                 newarr2:[],
-                newArr:[]
+                newArr:[],
+                swipeWidth:0,
             }
+        },
+        mounted(){
+            let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+            this.swipeWidth = htmlWidth/5
         },
         created(){
             this.getCartInfo()
@@ -100,6 +105,9 @@
         },
         inject:['changeTabBarActive'],
         methods: {
+            goGoods(id){
+                this.$router.push({name:'Goods',query:{goodsId:id}})
+            },
             //得到购物车的商品
             getCartInfo() {
                 axios({
@@ -205,9 +213,33 @@
         },
     }
 </script>
-<style scoped>
+<style>
+    .van-nav-bar{
+        height: 2.3rem;
+    }
+    .van-nav-bar__title{
+        font-size: 0.9rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .van-nav-bar__left, .van-nav-bar__right{
+        bottom: 50%;
+        transform: translateY(50%);
+        font-size: 0.7rem;
+    }
+    .van-nav-bar__text{
+        color: #f10215;
+    }
+    .van-nav-bar .van-icon{
+        color: #f10215;
+    }
     #cartBody{
-        padding-bottom: 90px;
+        padding-bottom: 4.5rem;
+    }
+    .van-swipe-cell{
+        width: 100%;
     }
     .card-title{
         height: 2rem;
@@ -236,10 +268,19 @@
     .text{
         float: left;
         width: 50%;
-        margin-top: 8px;
+        margin-top: 0.5rem;
     }
     .control{
-        margin-top: 10px;
+        margin-top: 0.5rem;
+    }
+    .van-stepper__minus, .van-stepper__plus{
+        width: 2rem;
+        height: 1.5rem;
+    }
+    .van-stepper__input{
+        width: 1.65rem;
+        height: 1.4rem;
+        font-size: 0.7rem;
     }
     .goods-pricess{
         float: right;
@@ -258,7 +299,7 @@
     }
     .van-submit-bar {
         left: 0;
-        bottom: 50px;
+        bottom: 3.2rem;
         width: 100%;
         z-index: 100;
         position: fixed;
@@ -267,14 +308,22 @@
         -ms-user-select: none;
         user-select: none;
     }
-    .van-submit-bar__bar{
-        height: 40px;
-    }
     .van-swipe-cell__right{
         color: #fff;
         background: #f44;
         width: 20%;
         height: 6rem;
         line-height: 6rem;
+    }
+    .van-submit-bar__bar{
+        height: 2rem;
+        font-size: 0.7rem;
+    }
+    .van-submit-bar .van-button{
+        font-size: 0.7rem;
+        width: 5rem;
+    }
+    .van-button{
+        line-height: 2rem;
     }
 </style>    

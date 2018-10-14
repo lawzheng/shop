@@ -7,7 +7,7 @@
             <van-tabbar-item icon="shop">首页</van-tabbar-item>
             <van-tabbar-item icon="records">分类</van-tabbar-item>
             <van-tabbar-item icon="cart">购物车</van-tabbar-item>
-            <van-tabbar-item icon="contact" info="20">会员中心</van-tabbar-item>
+            <van-tabbar-item icon="contact">会员中心</van-tabbar-item>
         </van-tabbar>
     </div>
 </template>
@@ -26,6 +26,12 @@
         provide(){
             return{
                 changeTabBarActive:this.changeTabBarActive,
+            }
+        },
+        mounted(){
+            let icon = document.querySelectorAll('.van-icon')
+            for(let item of icon){
+                item.style.fontSize = 1+'rem'
             }
         },
         methods: {
@@ -80,5 +86,18 @@
     }
     .van-tabbar{
         box-shadow: 0 -2px 5px #ccc;
+        height: 3.2rem;
+    }
+    .van-tabbar-item{
+        font-size: 0.8rem;
+    }
+    .van-tabbar-item__icon .van-icon{
+        font-size: 1rem;
+    }
+    .van-icon::before{
+        font-size: 1rem;
+    }
+    .van-icon{
+        font-size: 1rem;
     }
 </style>

@@ -31,6 +31,7 @@
         box-shadow: 0 0 2px #ccc;
         background: #fff;
         margin-top: 0.5rem;
+        font-size: 0.6rem;
     }
     .goods-name{
         padding: 0 8px;

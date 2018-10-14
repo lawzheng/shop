@@ -37,11 +37,11 @@
 <style>
     #toTop{
         position: fixed;
-        right: 20px;
-        bottom: 70px;
-        height: 30px;
-        width: 30px;
-        border-radius: 15px;
+        right: 1.5rem;
+        bottom: 5rem;
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: 50%;
         background: rgba(204,204,204,.4);
         z-index: 10000;
         display: none;

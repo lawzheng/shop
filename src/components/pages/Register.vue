@@ -103,14 +103,58 @@
         },
     }
 </script>
-<style scoped>
+<style>
+    .van-nav-bar{
+        height: 2.3rem;
+        line-height: 2.3rem;
+    }
+    .van-nav-bar__title {
+        font-size: 0.9rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+    .van-nav-bar__left, .van-nav-bar__right {
+        bottom: 0;
+        font-size: 0.7rem;
+        position: absolute;
+    }
+    .van-nav-bar__text{
+        color: #f10215;
+    }
+    .van-nav-bar .van-icon{
+        color: #f10215;
+    }
+    .van-cell--required::before{
+        font-size: 0.7rem;
+    }
+    .van-cell {
+        padding: 0.5rem 0.75rem;
+        line-height: 1.2rem;
+        font-size: 0.7rem;
+    }
+    .van-cell__value{
+        margin-left: 0.5rem;
+    }
+    .van-field__icon .van-icon{
+        font-size: 0.6rem;
+    }
     .register-panel{
         width:96%;
-        border-radius: 5px;
-        margin:20px auto;
-        padding-bottom:50px;
+        border-radius: 0.25rem;
+        margin:0.25rem auto;
+        padding-bottom:2.5rem;
     }
-    .register-button{
-        padding-top:10px;
+    .van-col{
+        padding: 0.25rem;
+    }
+    .van-button--large{
+        height: 2rem;
+        line-height: 2rem;
+    }
+    .van-button{
+        font-size: 0.8rem;
     }
 </style>

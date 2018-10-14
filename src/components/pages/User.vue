@@ -106,13 +106,13 @@ export default {
     margin-bottom: .3rem;
   }
   &-links {
-    padding: 15px 0;
-    font-size: 12px;
+    padding: 0.75rem 0;
+    font-size: 0.6rem;
     text-align: center;
     background-color: #fff;
     .van-icon {
       display: block;
-      font-size: 24px;
+      font-size: 1.6rem;
     }
   }
   &-card {
@@ -126,10 +126,10 @@ export default {
     position: relative;
     overflow: hidden;
     .image{
-      width: 60px;
-      height: 60px;
+      width: 3rem;
+      height: 3rem;
       position: absolute;
-      left: 15px;
+      left: 0.75rem;
       top: 50%;
       transform: translateY(-50%);
       border-radius: 50%;
@@ -140,37 +140,85 @@ export default {
       }
     }
     .userName{
-      width: 140px;
-      height: 70px;
+      width: 7rem;
+      height: 3.5rem;
       position: absolute;
-      left: 80px;
+      left: 4rem;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 14px;
+      font-size: 0.7rem;
       text-align: left;
       color: #fff;
       .name{
-        margin-top: 10px;
+        margin-top: 0.5rem;
         /*width: 100%;*/
-        height: 20px;
+        height: 1rem;
         display: block;
       }
       .score{
         /*width: 100%;*/
-        height: 20px;
+        height: 1rem;
         display: block;
-        margin-top: 5px;
+        margin-top: 0.25rem;
       }
     }
     .userControl{
       float: right;
-      font-size: 12px;
-      margin-top: 15px;
-      margin-right: 5px;
+      font-size: 0.6rem;
+      margin-top: 0.75rem;
+      margin-right: 0.25rem;
       img{
-        width: 12px;
+        width: 0.6rem;
       }
     }
   }
+}
+.van-nav-bar{
+    height: 2.3rem;
+}
+.van-nav-bar__title{
+    font-size: 0.9rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.van-nav-bar__left, .van-nav-bar__right{
+    bottom: 50%;
+    transform: translateY(50%);
+    font-size: 0.7rem;
+}
+.van-nav-bar__text{
+    color: #f10215;
+}
+.van-nav-bar .van-icon{
+    color: #f10215;
+}
+.van-cell {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0.5rem 0.75rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: 1.8rem;
+    position: relative;
+    background-color: #fff;
+    color: #333;
+    font-size: 0.7rem;
+    overflow: hidden;
+}
+.van-cell__right-icon {
+    color: #999;
+    font-size: 0.6rem;
+    line-height: 1.8rem;
+    margin-left: 0.25rem;
+}
+.van-cell__left-icon {
+    min-width: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.8rem;
+    margin-right: 0.25rem;
 }
 </style>
