@@ -204,7 +204,7 @@
         }
     }
 </script>
-<style>
+<style scoped>
     .search{
         height: 2.6rem;
         width: 100%;

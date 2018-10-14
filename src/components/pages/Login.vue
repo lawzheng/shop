@@ -139,7 +139,7 @@
         
     }
 </script>
-<style>
+<style scoped>
     .van-nav-bar{
         height: 2.3rem;
         line-height: 2.3rem;

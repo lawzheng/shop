@@ -135,7 +135,13 @@
                 })
             },
             toCart(){
-                this.$router.push({name:'Cart'})
+                if(localStorage.userInfo){
+                    this.$router.push({name:'Cart'})
+                }else{
+                    Toast.fail('请登录')
+                    this.$router.push({name:'Login'})
+                }
+                
             }
             //本地存储法
             // addGoodsToCart(){
@@ -204,7 +210,7 @@
     }
     .van-button--bottom-action{
         height: 2.5rem;
-        line-height: 2.5rem;
+        line-height: 2.5rem !important;
         font-size: 0.8rem;
     }
     .detail{

@@ -86,7 +86,7 @@
         }
     }
 </script>
-<style>
+<style scoped>
     .search1{
         height: 2.6rem;
         line-height:2.6rem;

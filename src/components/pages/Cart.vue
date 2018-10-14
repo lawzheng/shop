@@ -51,14 +51,11 @@
 <script>
     import axios from 'axios'
     import url from '@/serviceAPI.config.js'
-    import { Checkbox, CheckboxGroup, Card, SubmitBar, Toast } from 'vant';
+    import { SubmitBar, Toast } from 'vant';
     import {toMoney} from '@/filter/moneyFilter.js'
     export default {
         components: {
-            [Card.name]: Card,
-            [Checkbox.name]: Checkbox,
             [SubmitBar.name]: SubmitBar,
-            [CheckboxGroup.name]: CheckboxGroup
         },
         data() {
             return {
@@ -289,7 +286,7 @@
         margin-top: 0.4rem;
     }
     .goods-prices1 div{
-        margin: 0.3rem 0.1rem;
+        margin: 0.3rem 0;
     }
     .allPrice{
         white-space: nowrap;
