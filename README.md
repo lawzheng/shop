@@ -29,7 +29,9 @@ node / nodemon index.js
   http://localhost:3000/goods/insertAllCategory 导入大分类
   http://localhost:3000/goods/insertAllCategorySub 导入子分类
   http://localhost:3000/goods/insertAllGoodsInfo  导入商品
-  再进数据库建立一个名为``mains``的collection
+  再进数据库建立一个名为mains的collection
   我使用的Nosqlbooster将data_json下的main.json导入的
 4. 根目录 ``npm run dev``，浏览器打开8080端口就可以了
 
+
+```

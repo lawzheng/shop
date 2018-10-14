@@ -20,7 +20,7 @@
                                 <van-stepper v-model="count[index]" />
                             </div>
                         </div>
-                        <div class="goods-pricess">
+                        <div class="goods-prices1">
                             <div>
                                 ￥{{item.PRESENT_PRICE | moneyFilter}}
                             </div>
@@ -282,14 +282,19 @@
         height: 1.4rem;
         font-size: 0.7rem;
     }
-    .goods-pricess{
+    .goods-prices1{
+        width: 20%;
         float: right;
         text-align: right;
-        margin-top: 8px;
-        margin-right: 5px;
+        margin-top: 0.4rem;
     }
-    .goods-pricess div{
-        margin: 6px 0;
+    .goods-prices1 div{
+        margin: 0.3rem 0.1rem;
+    }
+    .allPrice{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .totalMoney{
         text-align: right;

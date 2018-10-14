@@ -95,7 +95,8 @@ router.post('/deleteOne',async(ctx)=>{
     try{
         console.log(ctx.request.body)
         const User = mongoose.model('User')
-        await User.updata({userName:ctx.request.body.userName},{$pull:{goodsId:ctx.request.body.goodsId}}).exec()
+        let result = await User.updata({userName:ctx.request.body.userName},{$pull:{goodsId:ctx.request.body.goodsId}}).exec()
+        result.save()
         ctx.body={code:200}
     }catch(err){
         ctx.body={code:500,message:err}
